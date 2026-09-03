@@ -1,0 +1,19 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "artifacts/cpr-screener"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@workspace/cpr-screener",
+    "build": "npm run build --workspace=@workspace/cpr-screener && rm -rf dist && cp -r artifacts/cpr-screener/dist dist",
+    "typecheck": "npm run typecheck --workspace=@workspace/cpr-screener",
+    "lint": "npm run typecheck --workspace=@workspace/cpr-screener"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3",
+    "typescript": "~5.9.3"
+  }
+}
